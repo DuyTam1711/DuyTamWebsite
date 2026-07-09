@@ -233,10 +233,17 @@
       return;
     }
 
+    // Kiểm tra xem thư viện Cloudflare đã tải xong chưa
+    if (typeof turnstile === 'undefined') {
+      errorEl.textContent = 'Captcha đang tải, vui lòng đợi vài giây rồi bấm Đăng nhập lại.';
+      errorEl.classList.add('is-show');
+      return;
+    }
+
     // Lấy token xác thực từ Cloudflare Turnstile
     const turnstileToken = turnstile.getResponse();
     if (!turnstileToken) {
-      errorEl.textContent = 'Vui lòng xác minh bạn không phải là robot.';
+      errorEl.textContent = 'Vui lòng tích xác minh bạn không phải là robot.';
       errorEl.classList.add('is-show');
       return;
     }
@@ -245,7 +252,7 @@
       const res = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: p, turnstileToken: turnstileToken }) // Gửi kèm token
+        body: JSON.stringify({ password: p, turnstileToken: turnstileToken })
       });
       const data = await res.json();
 
@@ -253,11 +260,11 @@
         adminPassword = p;
         closeLogin();
         openAdminPanel();
-        turnstile.reset(); // Reset captcha sau khi đăng nhập thành công
+        turnstile.reset();
       } else {
         errorEl.textContent = data.error || 'Mật khẩu không đúng.';
         errorEl.classList.add('is-show');
-        turnstile.reset(); // Reset captcha nếu sai để yêu cầu check lại
+        turnstile.reset();
       }
     } catch (err) {
       errorEl.textContent = 'Lỗi kết nối server.';
