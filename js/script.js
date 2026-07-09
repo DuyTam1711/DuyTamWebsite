@@ -222,7 +222,7 @@
     else { input.type = 'password'; this.textContent = 'Hiện'; }
   });
 
-  document.getElementById('login-submit').addEventListener('click', async () => {
+ document.getElementById('login-submit').addEventListener('click', async () => {
     const u = document.getElementById('login-user').value.trim();
     const p = document.getElementById('login-pass').value;
     const errorEl = document.getElementById('login-error');
@@ -233,11 +233,19 @@
       return;
     }
 
+    // Lấy token xác thực từ Cloudflare Turnstile
+    const turnstileToken = turnstile.getResponse();
+    if (!turnstileToken) {
+      errorEl.textContent = 'Vui lòng xác minh bạn không phải là robot.';
+      errorEl.classList.add('is-show');
+      return;
+    }
+
     try {
       const res = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: p })
+        body: JSON.stringify({ password: p, turnstileToken: turnstileToken }) // Gửi kèm token
       });
       const data = await res.json();
 
@@ -245,15 +253,17 @@
         adminPassword = p;
         closeLogin();
         openAdminPanel();
+        turnstile.reset(); // Reset captcha sau khi đăng nhập thành công
       } else {
-        errorEl.textContent = 'Mật khẩu không đúng.';
+        errorEl.textContent = data.error || 'Mật khẩu không đúng.';
         errorEl.classList.add('is-show');
+        turnstile.reset(); // Reset captcha nếu sai để yêu cầu check lại
       }
     } catch (err) {
       errorEl.textContent = 'Lỗi kết nối server.';
       errorEl.classList.add('is-show');
     }
-  });
+});
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
