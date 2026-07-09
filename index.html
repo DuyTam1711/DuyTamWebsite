@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>DuyTam Translation — Nhóm dịch game Việt Nam</title>
+<meta name="description" content="DuyTam Translation — Nhóm dịch game Việt Nam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Disclaimer Popup -->
+<div class="disclaimer-overlay" id="disclaimer-modal">
+  <div class="disclaimer-box">
+    <div class="disclaimer-icon">!</div>
+    <h3 class="disclaimer-title">Thông báo quan trọng</h3>
+    <p class="disclaimer-text">Nhóm chúng tôi chỉ cung cấp bản Patch Việt Hóa, chúng tôi không cấp game crack. Nếu bạn muốn crack, vui lòng đến trang web khác.</p>
+    <button class="disclaimer-btn" id="disclaimer-close">Tôi đã hiểu</button>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav class="top">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo" id="nav-logo">
+          <img src="img/logo.png" alt="DuyTam Translation Logo" onerror="this.style.display='none'">
+      </div>
+      <span>DuyTam <span class="dim">Translation</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">Về chúng tôi</a>
+      <a href="#games">Dự án</a>
+      <a href="#donate">Quyên góp</a>
+      <button class="nav-admin" id="admin-trigger">Admin</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Nhóm dịch game Việt Nam</div>
+    <h1>Việt Hoá những tựa game <span class="accent">kinh điển</span> dành cho người Việt.</h1>
+    <p class="hero-subtitle">
+      DuyTam Translation mang những tác phẩm game vĩ đại về với tiếng Việt — từng câu, từng chữ, từng menu đều được chăm chút bởi đội ngũ tình nguyện viên đam mê game.
+    </p>
+    <div class="hero-actions">
+      <a href="#games" class="btn-primary">Xem dự án →</a>
+      <a href="#about" class="btn-secondary">Về nhóm</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="num" id="meta-projects">01</div>
+        <div class="label">Tổng dự án</div>
+      </div>
+      <div class="stat-item">
+        <div class="num"><span class="accent" id="meta-done">00</span></div>
+        <div class="label">Hoàn thành</div>
+      </div>
+      <div class="stat-item">
+        <div class="num" id="meta-progress">01</div>
+        <div class="label">Đang thực hiện</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">2024</div>
+        <div class="label">Thành lập</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="section-head">
+    <div class="section-label">Về chúng tôi</div>
+    <h2 class="section-title">Mỗi bản dịch là một nhịp cầu nối game thủ Việt với thế giới.</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>DuyTam Translation là nhóm dịch game được thành lập bởi những game thủ Việt Nam yêu thích các tựa game kinh điển. Chúng tôi tin rằng <strong>ngôn ngữ không nên là rào cản</strong> ngăn cản bất kỳ ai trải nghiệm những tác phẩm vĩ đại.</p>
+      <p>Mỗi dự án dịch là một hành trình: từ việc nghiên cứu bối cảnh, thuật ngữ chuyên ngành, đến kỹ thuật bẻ khóa file văn bản và lắp ghép trở lại vào game. Chúng tôi làm việc phi lợi nhuận, vì cộng đồng.</p>
+      <div class="quote">"Mỗi câu văn dịch là một nhịp cầu nối game thủ Việt với thế giới."</div>
+      <p>Tất cả bản dịch đều được phát hành miễn phí. Chúng tôi tôn trọng bản quyền của nhà phát triển và khuyến khích người chơi mua game chính hãng.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="num">100%</div>
+        <div class="label">Tỉ lệ dịch văn bản</div>
+        <div class="desc">Mỗi dự án đều dịch đầy đủ văn bản trong game.</div>
+      </div>
+      <div class="about-card">
+        <div class="num">0₫</div>
+        <div class="label">Phát hành miễn phí</div>
+        <div class="desc">Không thu phí, vì cộng đồng game thủ Việt.</div>
+      </div>
+      <div class="about-card">
+        <div class="num">1</div>
+        <div class="label">Thành viên đóng góp</div>
+        <div class="desc">Toàn bộ dự án được thực hiện bởi DuyTam.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Donate -->
+<section class="section" id="donate">
+  <div class="section-head">
+    <div class="section-label">Quyên góp</div>
+    <h2 class="section-title">Ủng hộ nhóm duy trì dự án.</h2>
+  </div>
+  <div class="donate-grid">
+    <div class="donate-qr">
+      <img id="donate-qr-img" src="img/qr-default.png" alt="QR Code" onerror="this.style.display='none'">
+    </div>
+    <div class="donate-info">
+      <p class="donate-desc">Mọi sự đóng góp của bạn sẽ giúp chúng tôi duy trì máy chủ, mua tài khoản test game và tạo động lực cho các dịch giả. Cảm ơn bạn rất nhiều!</p>
+      <div class="donate-row">
+        <span class="donate-key">Số tài khoản</span>
+        <div class="donate-val-wrap">
+          <span class="donate-val" id="donate-acc">— Chưa cập nhật —</span>
+          <button class="donate-copy" data-copy="donate-acc">Sao chép</button>
+        </div>
+      </div>
+      <div class="donate-row">
+        <span class="donate-key">Ngân hàng</span>
+        <div class="donate-val-wrap">
+          <span class="donate-val" id="donate-bank">— Chưa cập nhật —</span>
+        </div>
+      </div>
+      <div class="donate-row">
+        <span class="donate-key">Tên người nhận</span>
+        <div class="donate-val-wrap">
+          <span class="donate-val" id="donate-name">— Chưa cập nhật —</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Games -->
+<section class="section" id="games">
+  <div class="section-head">
+    <div class="section-label">Dự án Việt Hoá</div>
+    <h2 class="section-title">Các tựa game đang được Việt Hoá.</h2>
+  </div>
+  <div class="games-list" id="games-list"></div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand-wrap">
+        <div class="footer-logo">
+          <div class="footer-logo-img" id="footer-logo">
+              <img src="img/logo.png" alt="DuyTam Translation Logo" onerror="this.style.display='none'">
+          </div>
+          <span>DuyTam Translation</span>
+        </div>
+        <p class="footer-tag">Nhóm dịch game phi lợi nhuận, vì cộng đồng game thủ Việt Nam. Tôn trọng bản quyền, khuyến khích mua game chính hãng.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Liên kết</h4>
+        <a href="#about">Về chúng tôi</a>
+        <a href="#games">Dự án</a>
+        <a href="#donate">Quyên góp</a>
+        <button id="footer-admin">Admin</button>
+      </div>
+      <div class="footer-col">
+        <h4>Dự án</h4>
+        <a href="#games">Overcooked 2! Việt Hoá</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Copyright by <span class="accent">DuyTam Translation</span></div>
+      <div>Code by <span class="accent">DuyTam</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Game detail modal -->
+<div class="modal-overlay" id="game-modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">×</button>
+    <div class="modal-banner">
+      <img id="modal-banner-img" src="" alt="">
+      <img id="modal-banner-logo" src="" alt="" style="display:none;">
+      <div class="modal-banner-overlay"></div>
+      <div class="modal-banner-text">
+        <div class="modal-status" id="modal-status"></div>
+        <h2 class="modal-title" id="modal-title"></h2>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Thông tin game</div>
+        <div class="modal-section-text" id="modal-info"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Mô tả bản dịch</div>
+        <div class="modal-section-text" id="modal-desc"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Đội ngũ thực hiện</div>
+        <div class="modal-team" id="modal-team"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Thời gian ra mắt</div>
+        <div class="modal-dates" id="modal-dates"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login modal -->
+<div class="login-modal" id="login-modal">
+  <div class="login-box">
+    <div class="login-sub">Quản trị</div>
+    <div class="login-title">Đăng nhập hệ thống</div>
+    <div class="login-field">
+      <label>Tên đăng nhập</label>
+      <input type="text" id="login-user" autocomplete="off">
+    </div>
+    <div class="login-field">
+      <label>Mật khẩu</label>
+      <div class="input-wrap">
+        <input type="password" id="login-pass">
+        <button type="button" class="toggle-pass" id="toggle-pass">Hiện</button>
+      </div>
+    </div>
+    <div class="login-error" id="login-error">Tên đăng nhập hoặc mật khẩu không đúng.</div>
+    <button class="login-submit" id="login-submit">Đăng nhập →</button>
+    <button class="login-cancel" id="login-cancel">Huỷ</button>
+  </div>
+</div>
+
+<!-- Admin panel -->
+<div class="admin-panel" id="admin-panel">
+  <div class="admin-header">
+    <div class="admin-title">
+      <span class="badge">Admin</span>
+      Quản lý dự án dịch
+    </div>
+    <div class="admin-actions">
+      <button class="admin-btn" id="admin-site-settings">Cài đặt site</button>
+      <button class="admin-btn primary" id="admin-add">+ Thêm game</button>
+      <button class="admin-btn" id="admin-logout">Đăng xuất</button>
+    </div>
+  </div>
+  <div class="admin-content">
+    <div class="admin-list-header">
+      <span>Danh sách game</span>
+      <span id="admin-count">0 mục</span>
+    </div>
+    <div id="admin-games-list"></div>
+  </div>
+</div>
+
+<!-- Site settings editor -->
+<div class="editor-overlay" id="site-editor">
+  <div class="editor">
+    <div class="editor-header">
+      <div class="editor-title"><span class="accent">Cài đặt</span> Site</div>
+      <button class="modal-close" id="site-editor-close">×</button>
+    </div>
+    <div class="editor-body">
+      <div class="editor-subtitle">Logo Web</div>
+      <div class="editor-field">
+        <label>Logo web (URL ảnh) <span class="opt">— để trống để dùng logo mặc định trong thư mục img/</span></label>
+        <input type="text" id="setting-logo" placeholder="https://example.com/logo.png">
+      </div>
+      <hr class="editor-divider">
+      <div class="editor-subtitle">Thông tin Quyên góp (Donate)</div>
+      <div class="editor-field">
+        <label>Mã QR (URL ảnh)</label>
+        <input type="text" id="setting-donate-qr" placeholder="https://example.com/qr.png">
+      </div>
+      <div class="editor-field-row">
+        <div class="editor-field">
+          <label>Số tài khoản</label>
+          <input type="text" id="setting-donate-acc">
+        </div>
+        <div class="editor-field">
+          <label>Ngân hàng</label>
+          <input type="text" id="setting-donate-bank">
+        </div>
+      </div>
+      <div class="editor-field">
+        <label>Tên người nhận</label>
+        <input type="text" id="setting-donate-name">
+      </div>
+    </div>
+    <div class="editor-footer">
+      <button class="admin-btn" id="site-editor-cancel">Huỷ</button>
+      <button class="admin-btn primary" id="site-editor-save">Lưu thay đổi</button>
+    </div>
+  </div>
+</div>
+
+<!-- Game editor -->
+<div class="editor-overlay" id="game-editor">
+  <div class="editor">
+    <div class="editor-header">
+      <div class="editor-title"><span class="accent" id="editor-mode">Thêm</span> Game</div>
+      <button class="modal-close" id="editor-close">×</button>
+    </div>
+    <div class="editor-body">
+      <div class="editor-field">
+        <label>Tên game</label>
+        <input type="text" id="game-title">
+      </div>
+      <div class="editor-field">
+        <label>Ảnh banner (URL)</label>
+        <input type="text" id="game-banner" placeholder="https://...">
+      </div>
+      <div class="editor-field">
+        <label>Logo trên banner (URL) <span class="opt">(không bắt buộc)</span></label>
+        <input type="text" id="game-banner-logo" placeholder="https://...">
+      </div>
+      <div class="editor-field">
+        <label>Trạng thái Việt Hoá</label>
+        <select id="game-status">
+          <option value="in-progress">Đang thực hiện</option>
+          <option value="completed">Hoàn thành</option>
+        </select>
+      </div>
+      <div class="editor-field">
+        <label>Thông tin game</label>
+        <textarea id="game-info"></textarea>
+      </div>
+      <div class="editor-field">
+        <label>Mô tả bản dịch</label>
+        <textarea id="game-desc"></textarea>
+      </div>
+      <div class="editor-field-row">
+        <div class="editor-field">
+          <label>Nhà phát triển</label>
+          <input type="text" id="game-developer">
+        </div>
+        <div class="editor-field">
+          <label>Nhà phát hành</label>
+          <input type="text" id="game-publisher">
+        </div>
+      </div>
+      <div class="editor-field-row">
+        <div class="editor-field">
+          <label>Dịch giả</label>
+          <input type="text" id="game-translator">
+        </div>
+        <div class="editor-field">
+          <label>Kỹ thuật</label>
+          <input type="text" id="game-technician">
+        </div>
+      </div>
+      <div class="editor-field-row">
+        <div class="editor-field">
+          <label>Kiểm duyệt <span class="opt">(không bắt buộc)</span></label>
+          <input type="text" id="game-reviewer">
+        </div>
+        <div class="editor-field">
+          <label>Thử nghiệm <span class="opt">(không bắt buộc)</span></label>
+          <input type="text" id="game-tester">
+        </div>
+      </div>
+      <div class="editor-field">
+        <label>Hỗ trợ</label>
+        <input type="text" id="game-support">
+      </div>
+      <div class="editor-field-row">
+        <div class="editor-field">
+          <label>Dự kiến ra mắt</label>
+          <input type="date" id="game-expected">
+        </div>
+        <div class="editor-field">
+          <label>Ngày ra mắt chính thức</label>
+          <input type="date" id="game-release">
+        </div>
+      </div>
+    </div>
+    <div class="editor-footer">
+      <button class="admin-btn" id="editor-cancel">Huỷ</button>
+      <button class="admin-btn primary" id="editor-save">Lưu game</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
